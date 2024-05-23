@@ -121,7 +121,7 @@ export default {
             props: {
                 ...tidyRule(rule.wrap || {}),
                 name: ctx.id,
-                rules: ctx.injectValidate(),
+                rules: rule.validate,
                 ...(layout !== 'horizontal' ? {labelCol: {}, wrapperCol: {}} : {})
             },
             class: rule.className,
@@ -273,7 +273,7 @@ export default {
                     const fApi = this.$handle.api;
                     this.options.submitBtn.click
                         ? this.options.submitBtn.click(fApi)
-                        : fApi.submit().catch(()=>{});
+                        : fApi.submit().catch(() => { });
                 }
             },
             key: `${this.key}b1`,
