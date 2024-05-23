@@ -65,4 +65,4 @@ typings/
 # custom
 yarn.lock
 /index.html
-dist
+# dist
